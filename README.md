@@ -194,9 +194,7 @@ The dashboard has been verified and hardened across all standard viewports:
 
 | Recent Projects Table | Mobile View |
 | :---: | :---: |
-| ![Recent Projects Table](./screenshots/recent-projects.png) | ![Mobile View](./screenshots/mobile-responsive.png) |
-
-*(To populate screenshots, save preview captures of the application into the `screenshots/` directory matching the filenames above).*
+| ![Recent Projects Table](./screenshots/recent-projects.png) | ![Mobile View](./screenshots/mobile-responsive.jpg) |
 
 ---
 
