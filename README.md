@@ -8,7 +8,7 @@ This application is a **frontend-only** implementation built with pure React fun
 
 ## Live Demo
 
-- **Deployment URL:** [https://algoryx-admin-dashboard.vercel.app](https://algoryx-admin-dashboard.vercel.app) *(or your configured Vercel deployment URL)*
+- **Deployment URL:** [Algoryx Admin Dashboard](https://algoryx-admin-dashboard-pearl.vercel.app) 
 
 ---
 
