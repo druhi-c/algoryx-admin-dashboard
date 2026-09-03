@@ -62,7 +62,7 @@ export function ProjectDetailsModal({ project, isOpen, onClose }) {
                 Contract Value
               </span>
               <span className="text-headline-sm font-bold font-mono text-on-surface tabular-nums">
-                {project.value || (project.budget ? `₹${(project.budget / 100000).toFixed(1)}L` : '₹8.0L')}
+                ${project.budget.toLocaleString()}
               </span>
             </div>
             <div>

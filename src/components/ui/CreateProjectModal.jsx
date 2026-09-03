@@ -25,19 +25,7 @@ export function CreateProjectModal({ isOpen, onClose, onCreateProject }) {
     e.preventDefault();
     if (!name.trim() || !client.trim()) return;
 
-    const cleaned = budget.replace(/[^0-9.]/g, '');
-    let displayVal = '₹8.0L';
-    let numericBudget = 800000;
-    if (cleaned) {
-      const num = parseFloat(cleaned);
-      if (num < 100) {
-        displayVal = `₹${num}L`;
-        numericBudget = Math.round(num * 100000);
-      } else {
-        displayVal = `₹${(num / 100000).toFixed(1)}L`;
-        numericBudget = Math.round(num);
-      }
-    }
+    const parsedBudget = parseInt(budget.replace(/[^0-9]/g, ''), 10) || 150000;
 
     onCreateProject({
       id: `proj-${Date.now()}`,
@@ -45,18 +33,16 @@ export function CreateProjectModal({ isOpen, onClose, onCreateProject }) {
       client: client.trim(),
       service,
       status,
-      value: displayVal,
-      rawBudget: numericBudget,
-      budget: numericBudget,
-      progress: status === 'Completed' ? 100 : status === 'Active' ? 80 : status === 'Planning' ? 15 : 55,
-      phase: phase.trim() || 'Phase 1 - Kickoff',
+      budget: parsedBudget,
+      progress: status === 'Completed' ? 100 : status === 'Review' ? 85 : status === 'Planning' ? 15 : 50,
+      phase: phase.trim() || 'Sprint 1',
       date: new Date().toISOString().split('T')[0],
     });
 
     setName('');
     setClient('');
     setBudget('');
-    setPhase('Phase 1 - Kickoff');
+    setPhase('Sprint 1');
     onClose();
   };
 
@@ -125,11 +111,11 @@ export function CreateProjectModal({ isOpen, onClose, onCreateProject }) {
 
             <div>
               <label className="block text-label-md font-label-md text-on-surface mb-1">
-                Contract Value (e.g. ₹8.4L)
+                Estimated Budget ($ USD)
               </label>
               <input
                 type="text"
-                placeholder="e.g. ₹8.4L or 8.4"
+                placeholder="e.g. 350,000"
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
                 className="w-full h-[38px] px-3 bg-surface border border-outline-variant rounded-lg text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors font-mono"
@@ -164,10 +150,10 @@ export function CreateProjectModal({ isOpen, onClose, onCreateProject }) {
                 onChange={(e) => setStatus(e.target.value)}
                 className="w-full h-[38px] px-3 bg-surface border border-outline-variant rounded-lg text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors"
               >
-                <option value="Active">Active</option>
-                <option value="Progress">Progress</option>
-                <option value="Completed">Completed</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Review">Review</option>
                 <option value="Planning">Planning</option>
+                <option value="Completed">Completed</option>
               </select>
             </div>
 

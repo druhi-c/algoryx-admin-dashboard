@@ -6,7 +6,7 @@ export function ExecutiveBrief({ timeframe, onTimeframeChange, onExportReport })
       <div>
         <div className="flex items-center gap-2">
           <h1 className="text-headline-lg font-headline-lg font-bold text-on-surface tracking-tight">
-            Good morning, Administrator 👋
+            Good morning, Druhi 👋
           </h1>
         </div>
         <p className="text-body-md font-body-md text-on-surface-variant mt-1">

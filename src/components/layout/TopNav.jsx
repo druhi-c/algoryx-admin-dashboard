@@ -170,7 +170,7 @@ export function TopNav({
             <div className="relative">
               <img
                 className="w-8 h-8 rounded-full object-cover border border-outline-variant shadow-xs"
-                alt="Administrator Profile"
+                alt="Druhi S., Principal Architect"
                 src={mockOperator.avatarUrl}
               />
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-surface-container-lowest" />

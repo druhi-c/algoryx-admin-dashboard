@@ -4,7 +4,6 @@ export function Badge({ variant = 'neutral', children, className = '' }) {
   const variantStyles = {
     completed: 'bg-emerald-50 text-emerald-800 border-emerald-200',
     active: 'bg-emerald-50 text-emerald-800 border-emerald-200',
-    progress: 'bg-blue-50 text-blue-700 border-blue-200',
     inProgress: 'bg-blue-50 text-blue-700 border-blue-200',
     review: 'bg-amber-50 text-amber-800 border-amber-200',
     planning: 'bg-slate-100 text-slate-700 border-slate-300',
@@ -15,7 +14,6 @@ export function Badge({ variant = 'neutral', children, className = '' }) {
   const dotColors = {
     completed: 'bg-emerald-500',
     active: 'bg-emerald-500',
-    progress: 'bg-blue-600',
     inProgress: 'bg-blue-600',
     review: 'bg-amber-500',
     planning: 'bg-slate-400',

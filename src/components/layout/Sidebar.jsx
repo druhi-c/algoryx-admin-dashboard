@@ -56,7 +56,7 @@ export function Sidebar({
                     Algoryx
                   </span>
                   <span className="text-label-sm font-label-sm text-on-surface-variant mt-1 leading-none">
-                    Technologies
+                    Enterprise Cloud
                   </span>
                 </div>
               )}
